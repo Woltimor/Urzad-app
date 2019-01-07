@@ -1,0 +1,9 @@
+<h1>Hi {{currentUser.imie}} Twoje Uprawnienia: {{currentUser.Uprawnienia}} !</h1>
+<p>You're logged in with Angular 7!!</p>
+<h3>All registered users:</h3>
+<ul>
+    <li *ngFor="let user of users">
+        {{user.Login}} ({{user.Imie}} {{user.Nazwisko}})
+        <a (click)="deleteUser(user.IdOsoby)" class="text-danger">Delete</a>
+    </li>
+</ul>

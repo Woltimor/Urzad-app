@@ -1,0 +1,28 @@
+<mdb-card class="text-white mx-auto" bgColor="morpheus-den-gradient" style="max-width: 80rem">
+    <span class="table-add float-right">
+        <a class="text-success" routerLink="/management/type/add-type">Dodaj nawy typ oferty
+          <mdb-icon icon="plus" size="4x"></mdb-icon>
+        </a>
+      </span>
+  <mdb-card-header class="mx-auto">Typy Ofert</mdb-card-header>
+  <mdb-card-body>
+  <table mdbTable mdbTableScroll scrollY="true" maxHeight="200" bordered="true">
+    <thead>
+      <tr>
+        <th *ngFor="let head of headElements; let i = index" scope="col">{{head}}</th>
+        <th >Edytuj</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let typ of types; let i = index; " >
+        <th scope="row">{{typ.idTypu}}</th>
+        <td>{{typ.opis}}</td>
+        <td>
+          <button type="button" mdbBtn color="green" rounded="true" size="sm" class="my-0" [routerLink]="['/management/type/edit-type', typ.idTypu, typ.opis]" >Edit</button>
+          <button type="button" mdbBtn color="red" rounded="true" size="sm" class="my-0" (click)="remove(id)">Remove</button>
+        </td>
+     </tr>
+    </tbody>
+  </table>
+  </mdb-card-body>
+  </mdb-card>

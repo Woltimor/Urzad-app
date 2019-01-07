@@ -1,0 +1,35 @@
+<!-- <div class="col-sm-12 scroll"> -->
+<h3 class=" text-center font-weight-bold text-uppercase py-4"><p style="font-size:180%;font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;color:whitesmoke">Użytkownicy</p></h3>
+  <div class="card-body scroll">
+    <div id="table" class="mdbTable " z-depth-1>
+      <span class="table-add float-right mb-3 mr-2">
+        <a class="text-success" routerLink="/users/user-details">
+          <mdb-icon icon="plus" size="4x"></mdb-icon>
+        </a>
+      </span>
+      <table class="table table-bordered table-responsive-md mdbTableScroll table-striped text-center bg-light">
+        <tr>
+          <th class="text-center"><p style="font-size:150%;font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;color:rgb(192, 37, 37)">Imię</p></th>
+          <th class="text-center"><p style="font-size:150%;font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;color:rgb(192, 37, 37)">Nazwisko</p></th>
+          <th class="text-center"><p style="font-size:150%;font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;color:rgb(192, 37, 37)">Pesel</p></th>
+          <th class="text-center"><p style="font-size:150%;font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;color:rgb(192, 37, 37)">Email</p></th>
+          
+        </tr>
+        <tr *ngFor="let x of users; let id = index">
+          <td contenteditable="true" (keyup.enter)="changeValue(id, 'Imię', $event)" (blur)="updateList(id, 'Imię', $event)">{{x.imie}}</td>
+          <td contenteditable="true" (keyup.enter)="changeValue(id, 'Nazwisko', $event)" (blur)="updateList(id, 'Nazwisko', $event)">{{x.nazwisko}}</td>
+          <td contenteditable="true" (keyup.enter)="changeValue(id, 'Pesel', $event)" (blur)="updateList(id, 'Pesel', $event)">{{x.pesel}}</td>
+          <td contenteditable="true" (keyup.enter)="changeValue(id, 'Email', $event)" (blur)="updateList(id, 'Email', $event)">{{x.email}}</td>
+          <td>
+              <span class="table-editable">
+                <button type="button" mdbBtn color="green" rounded="true" size="sm" class="my-0" (click)="edit(id)">Edit</button>
+              </span>
+              <span class="table-remove">
+                  <button type="button" mdbBtn color="red" rounded="true" size="sm" class="my-0" (click)="remove(id)">Remove</button>
+                </span>
+            </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+<!-- </div> -->

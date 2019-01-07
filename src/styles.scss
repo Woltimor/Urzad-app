@@ -1,0 +1,19 @@
+.view {
+    background: url("https://images7.alphacoders.com/305/305335.jpg")no-repeat center center;
+    background-size: cover;
+    height: 120vh;
+}
+
+.navbar {
+    background-color: #1c2331;
+}
+
+.top-nav-collapse {
+    background-color: #4285F4;
+}
+
+@media only screen and (max-width: 768px) {
+    .navbar {
+        background-color: #4285F4;
+    }
+}

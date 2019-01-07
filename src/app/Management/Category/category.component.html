@@ -1,0 +1,29 @@
+<mdb-card class="text-white mx-auto" bgColor="morpheus-den-gradient" style="max-width: 80rem">
+  <span class="table-add float-right">
+      <a class="text-success" routerLink="/management/type/add-type">Dodaj nową kategorię
+        <mdb-icon icon="plus" size="4x"></mdb-icon>
+      </a>
+    </span>
+<mdb-card-header class="mx-auto">Kategorie</mdb-card-header>
+<mdb-card-body>
+<table mdbTable mdbTableScroll scrollY="true" maxHeight="200" bordered="true">
+  <thead>
+    <tr>
+      <th *ngFor="let head of headElements; let i = index" scope="col">{{head}}</th>
+      <th >Edytuj</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cat of categories; let i = index; " >
+      <th scope="row">{{cat.idKategorii}}</th>
+      <td>{{cat.opis}}</td>
+      <td>{{cat.nazwa}}</td>
+      <td>
+        <button type="button" mdbBtn color="green" rounded="true" size="sm" class="my-0" >Edit</button>
+        <button type="button" mdbBtn color="red" rounded="true" size="sm" class="my-0" (click)="remove(id)">Remove</button>
+      </td>
+   </tr>
+  </tbody>
+</table>
+</mdb-card-body>
+</mdb-card>
