@@ -1,46 +1,46 @@
 <mdb-card class="text-white mx-auto" bgColor="morpheus-den-gradient" style="max-width: 50rem">
-<mdb-card-body>
-<mdb-card-header class="mx-auto">Wybierz Typ Pracy</mdb-card-header>
-<select (change)="onChange1($event.target)"  class="browser-default custom-select" >
-    <option value="" >Typ Pracy</option>
-    <option value="" >Puste</option>
-    <option  *ngFor="let x of type" [value]="x">{{x}}</option>
-</select>
+  <mdb-card-body>
+    <mdb-card-header class="mx-auto">Wybierz Typ Pracy</mdb-card-header>
+    <select (change)="onChange1($event.target)" class="browser-default custom-select">
+      <option value="">Typ Pracy</option>
+      <option value="">Puste</option>
+      <option *ngFor="let x of type" [value]="x">{{x}}</option>
+    </select>
 
-<mdb-card-header class="mx-auto">Wybierz Kategorię Pracy</mdb-card-header>
-<select (change)="onChange2($event.target)" class="browser-default custom-select" >
-    <option value="">Kategoria Oferty</option>
-    <option value="">Puste</option>
-    <option *ngFor="let y of category" [value]="y">{{y}}</option>
-</select>
-<mdb-card-header class="mx-auto">Wybierz Pracę</mdb-card-header>
-<select (change)="onChange3($event.target)" class="browser-default custom-select" >
-    <option value="">Oferta</option>
-    <option value="">Puste</option>
-    <option *ngFor="let z of types" [value]="z.opisOferty">{{z.opisOferty}}</option>
-</select>
-</mdb-card-body>
+    <mdb-card-header class="mx-auto">Wybierz Kategorię Pracy</mdb-card-header>
+    <select (change)="onChange2($event.target)" class="browser-default custom-select">
+      <option value="">Kategoria Oferty</option>
+      <option value="">Puste</option>
+      <option *ngFor="let y of category" [value]="y">{{y}}</option>
+    </select>
+    <mdb-card-header class="mx-auto">Wybierz Pracę</mdb-card-header>
+    <select (change)="onChange3($event.target)" class="browser-default custom-select">
+      <option value="">Oferta</option>
+      <option value="">Puste</option>
+      <option *ngFor="let z of types" [value]="z.opisOferty">{{z.opisOferty}}</option>
+    </select>
+  </mdb-card-body>
 </mdb-card>
 <br>
 
 <mdb-card class="text-white mx-auto" bgColor="morpheus-den-gradient" style="max-width: 150rem">
-<mdb-card-header class="mx-auto">DOSTĘPNE OFERTY PRACY</mdb-card-header>
-<mdb-card-body>
-<table mdbTable mdbTableScroll scrollY="true" maxHeight="200" bordered="true">
-    <thead>
-      <tr>
-        <th *ngFor="let head of headElements; let i = index" scope="col">{{head}}</th>
-        <th >Złóż CV!</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let el of temporary; let i = index; " >
-        <th scope="row">{{el.idOferty}}</th>
-        <td>{{el.opisTypu}}</td>
-        <td>{{el.nazwa}}</td>
-        <td>{{el.opisOferty}}</td>
-      </tr>
-    </tbody>
-  </table>
-</mdb-card-body>
+  <mdb-card-header class="mx-auto">DOSTĘPNE OFERTY PRACY</mdb-card-header>
+  <mdb-card-body>
+    <table mdbTable mdbTableScroll scrollY="true" maxHeight="200" bordered="true">
+      <thead>
+        <tr>
+          <th *ngFor="let head of headElements; let i = index" scope="col">{{head}}</th>
+          <th>Złóż CV!</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let el of temporary; let i = index; ">
+          <th scope="row">{{el.idOferty}}</th>
+          <td>{{el.opisTypu}}</td>
+          <td>{{el.nazwa}}</td>
+          <td>{{el.opisOferty}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </mdb-card-body>
 </mdb-card>

@@ -7,13 +7,12 @@ import { NgForm } from '@angular/forms';
   selector: 'app-type',
   templateUrl: './type.component.html',
   styleUrls: ['./type.component.scss'],
-  providers:[ManagementService]
+  providers: [ManagementService]
 })
 export class TypeComponent implements OnInit {
-  types:TypModel;
-  headElements = ['Numer typu','Typ'];
-  constructor(private managementService:ManagementService) { }
-
+  types: TypModel;
+  headElements = ['Numer typu', 'Typ'];
+  constructor(private managementService: ManagementService) { }
 
 
   ngOnInit() {

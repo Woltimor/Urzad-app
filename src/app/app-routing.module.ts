@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import {Routes, RouterModule} from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 import { UsersComponent } from './users/users.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { UserDetailsComponent } from './Users/user-details/user-details.component';
@@ -25,44 +25,44 @@ import { EditCategoryComponent } from './Management/Category/edit-category/edit-
 
 
 const appRoutes: Routes = [
-    {path: '', component: HomeComponent, canActivate: [AuthGuard]},
+    { path: '', component: HomeComponent, canActivate: [AuthGuard] },
     // {path: '', redirectTo: '/app', pathMatch: 'full'},
-    {path: 'users', component: UsersComponent},
-    {path: 'categories', component: CategoriesComponent},
-    {path: 'users/user-details', component: UserDetailsComponent},
-    {path: 'offers', component: OffersComponent},
-    {path: 'contact', component: ContactComponent},
-    {path: 'download', component: DownloadComponent},
-    {path: 'offers/offers-details', component: OffersDetailsComponent},
-    {path: 'login', component: LoginComponent},
-    {path: 'register', component: RegisterComponent},
+    { path: 'users', component: UsersComponent },
+    { path: 'categories', component: CategoriesComponent },
+    { path: 'users/user-details', component: UserDetailsComponent },
+    { path: 'offers', component: OffersComponent },
+    { path: 'contact', component: ContactComponent },
+    { path: 'download', component: DownloadComponent },
+    { path: 'offers/offers-details', component: OffersDetailsComponent },
+    { path: 'login', component: LoginComponent },
+    { path: 'register', component: RegisterComponent },
 
-    {path: 'management/category', component: CategoryComponent},
-    {path: 'management/offer', component: OfferComponent},
-    {path: 'management/result', component: ResultComponent},
-    {path: 'management/type', component: TypeComponent},
-    {path: 'management/required', component: RequiredComponent},
+    { path: 'management/category', component: CategoryComponent },
+    { path: 'management/offer', component: OfferComponent },
+    { path: 'management/result', component: ResultComponent },
+    { path: 'management/type', component: TypeComponent },
+    { path: 'management/required', component: RequiredComponent },
 
-    {path: 'management/type/add-type', component: AddTypeComponent},
-    {path: 'management/type/edit-type/:id/:typ', component: EditTypeComponent},
-    {path: 'management/offer/add-offer', component: AddOfferComponent},
-    {path: 'management/offer/edit-offer/:id', component: EditOfferComponent},
-    {path: 'management/category/add-category', component: AddCategoryComponent},
-    {path: 'management/category/edit-category/:id', component: EditCategoryComponent},
-
-
+    { path: 'management/type/add-type', component: AddTypeComponent },
+    { path: 'management/type/edit-type/:id/:typ', component: EditTypeComponent },
+    { path: 'management/offer/add-offer', component: AddOfferComponent },
+    { path: 'management/offer/edit-offer/:id', component: EditOfferComponent },
+    { path: 'management/category/add-category', component: AddCategoryComponent },
+    { path: 'management/category/edit-category/:idKategorii/:opis/:nazwa', component: EditCategoryComponent },
 
 
 
-    
+
+
+
     { path: '**', redirectTo: '' }
 ];
 export const routing = RouterModule.forRoot(appRoutes);
 
 @NgModule({
-    imports : [RouterModule.forRoot(appRoutes)],
+    imports: [RouterModule.forRoot(appRoutes)],
     exports: [RouterModule]
 
 })
 
-export class AppRoutingModule {}
+export class AppRoutingModule { }

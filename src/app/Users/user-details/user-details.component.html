@@ -1,31 +1,32 @@
 <div class="card">
   <div class="container">
     <form (ngSubmit)="onSubmit()" #f="ngForm">
-    <div class="form-row">
-      <div class="col-md-6">
-        <div class="md-form form-group">
-          <input  type="text" class="form-control" [(ngModel)]="Imie"  name="Imie"  placeholder="Imie" required >
+      <div class="form-row">
+        <div class="col-md-6">
+          <div class="md-form form-group">
+            <input type="text" class="form-control" [(ngModel)]="Imie" name="Imie" placeholder="Imie" required>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="md-form form-group">
+            <input type="text" class="form-control" [(ngModel)]="Nazwisko" name="Nazwisko" placeholder="Nazwisko"
+              required>
+          </div>
         </div>
       </div>
-      <div class="col-md-6">
-        <div class="md-form form-group">
-          <input  type="text" class="form-control" [(ngModel)]="Nazwisko" name="Nazwisko"  placeholder="Nazwisko" required>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="md-form form-group">
+            <input type="text" class="form-control" [(ngModel)]="Login1" name="Login1" placeholder="Login" required>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="md-form form-group">
+            <input type="text" class="form-control" [(ngModel)]="Haslo" name="Haslo" placeholder="Haslo" required>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12">
-        <div class="md-form form-group">
-          <input  type="text" class="form-control" [(ngModel)]="Login1" name="Login1"  placeholder="Login" required>
-        </div>
-      </div>
-      <div class="col-md-12">
-        <div class="md-form form-group">
-          <input  type="text" class="form-control" [(ngModel)]="Haslo" name="Haslo" placeholder="Haslo" required  >
-        </div>
-      </div>
-    </div>
-    <button type="submit" class="btn btn-primary btn-md" [disabled]="!f.valid">Sign in</button>
-  </form>
-</div>
+      <button type="submit" class="btn btn-primary btn-md" [disabled]="!f.valid">Sign in</button>
+    </form>
+  </div>
 </div>

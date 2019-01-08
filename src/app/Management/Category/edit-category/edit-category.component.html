@@ -1,3 +1,33 @@
-<p>
-  edit-category works!
-</p>
+<mdb-card class="text-white mx-auto" bgColor="morpheus-den-gradient" style="max-width: 150rem">
+  <mdb-card-header class="mx-auto">Zmień kategorię oferty</mdb-card-header>
+  <form (ngSubmit)="onSubmit()" #f="ngForm">
+    <mdb-card-body>
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"
+          [(ngModel)]="category.IdKategorii" name="IdKategorii" required>
+      </div>
+
+      <p>Aktualny typ pracy to: {{category.Opis}}, aby zmienić wybierz:</p>
+      <select class="form-control" (change)="function($event)" required>
+        <option selected="">{{category.Opis}}</option>
+        <option *ngFor="let typ of types" [value]='typ.idTypu'>{{typ.opis}}</option>
+      </select>
+
+
+
+      <p>Kategoria</p>
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"
+          [(ngModel)]="category.Nazwa" name="Nazwa" required>
+      </div>
+      <button mdbBtn type="submit" gradient="peach" size="sm" mdbWavesEffect [disabled]="!f.valid">Zapisz zmiany</button>
+    </mdb-card-body>
+  </form>
+</mdb-card>
+
+
+<!-- <p>Aktualny typ pracy to: {{category.Opis}}, aby zmienić wybierz:</p>
+<select  class="form-control" [(ngModel)]='IdTypu' name="IdTypu">
+    <option selected="">{{category.Opis}}</option>
+    <option *ngFor="let typ of types" [ngValue]="typ.idTypu">{{typ.opis}}</option>
+</select> -->

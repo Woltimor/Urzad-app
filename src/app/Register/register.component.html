@@ -1,97 +1,99 @@
 <mdb-card class="text-white mx-auto" bgColor="morpheus-den-gradient" style="max-width: 80rem">
-<mdb-card-header class="mx-auto">REJESTRACJA</mdb-card-header>
-<mdb-card-body>
-<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-    <div class="form-group">
-        <label for="Imie">Imie</label>
-        <input type="text" formControlName="Imie" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Imie.errors }" />
-        <div *ngIf="submitted && f.Imie.errors" class="invalid-feedback">
-            <div *ngIf="f.Imie.errors.required">Imię jest wymagane</div>
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="Nazwisko">Nazwisko</label>
-        <input type="text" formControlName="Nazwisko" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Nazwisko.errors }" />
-        <div *ngIf="submitted && f.Nazwisko.errors" class="invalid-feedback">
-            <div *ngIf="f.Nazwisko.errors.required">Nazwisko jest wymagane</div>
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="Login">Login</label>
-        <input type="text" formControlName="Login" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Login.errors }" />
-        <div *ngIf="submitted && f.Login.errors" class="invalid-feedback">
-            <div *ngIf="f.Login.errors.required">Login jest wymagany</div>
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="Haslo">Hasło</label>
-        <input type="password" formControlName="Haslo" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Haslo.errors }" />
-        <div *ngIf="submitted && f.Haslo.errors" class="invalid-feedback">
-            <div *ngIf="f.Haslo.errors.required">Hasło jest wymagane</div>
-            <div *ngIf="f.Haslo.errors.minlength">Hasło powinno się składać z min 6 znaków</div>
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="Pesel">Pesel</label>
-        <input type="text" formControlName="Pesel" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Pesel.errors }" />
-        <div *ngIf="submitted && f.Pesel.errors" class="invalid-feedback">
-            <div *ngIf="f.Pesel.errors.required">Pesel jest wymagany</div>
-            <div *ngIf="f.Pesel.errors.minlength">Pesel powinien się składać z 11 liczb</div>
-            <div *ngIf="f.Pesel.errors.maxlength">Pesel powinien się składać z 11 liczb</div>
-            <div *ngIf="f.Pesel.errors.pattern">Pesel ma się składać wyłącznie z liczb</div>
+    <mdb-card-header class="mx-auto">REJESTRACJA</mdb-card-header>
+    <mdb-card-body>
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="Imie">Imie</label>
+                <input type="text" formControlName="Imie" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Imie.errors }" />
+                <div *ngIf="submitted && f.Imie.errors" class="invalid-feedback">
+                    <div *ngIf="f.Imie.errors.required">Imię jest wymagane</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Nazwisko">Nazwisko</label>
+                <input type="text" formControlName="Nazwisko" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Nazwisko.errors }" />
+                <div *ngIf="submitted && f.Nazwisko.errors" class="invalid-feedback">
+                    <div *ngIf="f.Nazwisko.errors.required">Nazwisko jest wymagane</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Login">Login</label>
+                <input type="text" formControlName="Login" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Login.errors }" />
+                <div *ngIf="submitted && f.Login.errors" class="invalid-feedback">
+                    <div *ngIf="f.Login.errors.required">Login jest wymagany</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Haslo">Hasło</label>
+                <input type="password" formControlName="Haslo" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Haslo.errors }" />
+                <div *ngIf="submitted && f.Haslo.errors" class="invalid-feedback">
+                    <div *ngIf="f.Haslo.errors.required">Hasło jest wymagane</div>
+                    <div *ngIf="f.Haslo.errors.minlength">Hasło powinno się składać z min 6 znaków</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Pesel">Pesel</label>
+                <input type="text" formControlName="Pesel" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Pesel.errors }" />
+                <div *ngIf="submitted && f.Pesel.errors" class="invalid-feedback">
+                    <div *ngIf="f.Pesel.errors.required">Pesel jest wymagany</div>
+                    <div *ngIf="f.Pesel.errors.minlength">Pesel powinien się składać z 11 liczb</div>
+                    <div *ngIf="f.Pesel.errors.maxlength">Pesel powinien się składać z 11 liczb</div>
+                    <div *ngIf="f.Pesel.errors.pattern">Pesel ma się składać wyłącznie z liczb</div>
 
-        </div>
-    </div>
-    <!-- <div class="form-group">
+                </div>
+            </div>
+            <!-- <div class="form-group">
         <label for="Wyksztalcenie">Wykształcenie</label>
         <input type="text" formControlName="Wyksztalcenie" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Wyksztalcenie.errors }" />
         <div *ngIf="submitted && f.Wyksztalcenie.errors" class="invalid-feedback">
             <div *ngIf="f.Wyksztalcenie.errors.required">Wykształcenie jest wymagane</div>
         </div>
     </div> -->
- <div class="form-group">
-    <label for="Wyksztalcenie">Wykształcenie</label>
-    <select class="browser-default custom-select" formControlName="Wyksztalcenie">
-            <option selected value="Brak">Brak</option>
-            <option value="Podstawowe">Podstawowe</option>
-            <option value="Średnie">Średnie</option>
-            <option value="Wyższe">Wyższe</option>
-    </select>
- </div>
+            <div class="form-group">
+                <label for="Wyksztalcenie">Wykształcenie</label>
+                <select class="browser-default custom-select" formControlName="Wyksztalcenie">
+                    <option selected value="Brak">Brak</option>
+                    <option value="Podstawowe">Podstawowe</option>
+                    <option value="Średnie">Średnie</option>
+                    <option value="Wyższe">Wyższe</option>
+                </select>
+            </div>
 
-    <div class="form-group">
-        <label for="EMail">E-mail</label>
-        <input type="email" formControlName="EMail" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.EMail.errors}"  />
-        <div *ngIf="submitted && f.EMail.errors" class="invalid-feedback">
-            <div *ngIf="f.EMail.errors.required">E-mail jest wymagany</div>
-            <div *ngIf="f.EMail.errors.email">Nieprawidłowy E-mail!</div>
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="DataUrodzenia">Data Urodzenia</label>
-        <input type="date" formControlName="DataUrodzenia" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.DataUrodzenia.errors }" />
-        <div *ngIf="submitted && f.DataUrodzenia.errors" class="invalid-feedback">
-            <div *ngIf="f.DataUrodzenia.errors.required">Data urodzenia jest wymagana</div>
-        </div>
-    </div>
+            <div class="form-group">
+                <label for="EMail">E-mail</label>
+                <input type="email" formControlName="EMail" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.EMail.errors}" />
+                <div *ngIf="submitted && f.EMail.errors" class="invalid-feedback">
+                    <div *ngIf="f.EMail.errors.required">E-mail jest wymagany</div>
+                    <div *ngIf="f.EMail.errors.email">Nieprawidłowy E-mail!</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="DataUrodzenia">Data Urodzenia</label>
+                <input type="date" formControlName="DataUrodzenia" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.DataUrodzenia.errors }" />
+                <div *ngIf="submitted && f.DataUrodzenia.errors" class="invalid-feedback">
+                    <div *ngIf="f.DataUrodzenia.errors.required">Data urodzenia jest wymagana</div>
+                </div>
+            </div>
 
-    <div class="form-group">
-            <label for="Plec">Wybierz Płeć:</label>
-            <br>
-           <input type="radio" value="Mężczyzna" formControlName="Plec"[ngClass]="{ 'is-invalid': submitted && f.DataUrodzenia.errors }"> Mężczyzna
-           <input type="radio" value="Kobieta" formControlName="Plec"  [ngClass]="{ 'is-invalid': submitted && f.DataUrodzenia.errors }" > Kobieta
-           <div *ngIf="submitted && f.Plec.errors" class="invalid-feedback">
-                <div *ngIf="f.Plec.errors.required">Pleć jest wymagana</div>
-           </div>
-    </div>
-           
-           <!-- <input type="checkbox" formControlName="tc"> -->
-    <div class="form-group">
-        <button [disabled]="loading" class="btn btn-primary">Zarejestruj</button>
-        <img *ngIf="loading" class="pl-3" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
-        <a routerLink="/login" class="btn btn-link">Login</a>
-    </div>
-</form>
+            <div class="form-group">
+                <label for="Plec">Wybierz Płeć:</label>
+                <br>
+                <input type="radio" value="Mężczyzna" formControlName="Plec" [ngClass]="{ 'is-invalid': submitted && f.DataUrodzenia.errors }">
+                Mężczyzna
+                <input type="radio" value="Kobieta" formControlName="Plec" [ngClass]="{ 'is-invalid': submitted && f.DataUrodzenia.errors }">
+                Kobieta
+                <div *ngIf="submitted && f.Plec.errors" class="invalid-feedback">
+                    <div *ngIf="f.Plec.errors.required">Pleć jest wymagana</div>
+                </div>
+            </div>
 
-</mdb-card-body>
+            <!-- <input type="checkbox" formControlName="tc"> -->
+            <div class="form-group">
+                <button [disabled]="loading" class="btn btn-primary">Zarejestruj</button>
+                <img *ngIf="loading" class="pl-3" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+                <a routerLink="/login" class="btn btn-link">Login</a>
+            </div>
+        </form>
+
+    </mdb-card-body>
 </mdb-card>

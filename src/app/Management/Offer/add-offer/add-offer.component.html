@@ -1,3 +1,21 @@
-<p>
-  add-offer works!
-</p>
+<mdb-card class="text-white mx-auto" bgColor="morpheus-den-gradient" style="max-width: 80rem">
+  <mdb-card-header class="mx-auto">Dodaj nową ofertę pracy</mdb-card-header>
+  <form (ngSubmit)="onSubmit()" #f="ngForm">
+    <mdb-card-body>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-default">Nazwa oferty</span>
+        </div>
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"
+          [(ngModel)]="OpisOferty" name="OpisOferty" placeholder="Oferta" required>
+      </div>
+      <p>Wybierz kategorię i typ oferty</p>
+      <select class="browser-default custom-select" [(ngModel)]="IdKategorii" name="IdKategorii">
+        <option selected>Wybierz kategorię i typ oferty</option>
+        <option [ngValue]="cat.idKategorii" *ngFor="let cat of categories">Kategoria: {{cat.nazwa}} Typ: {{cat.opis}}</option>
+      </select>
+
+      <button mdbBtn type="submit" gradient="peach" size="sm" mdbWavesEffect [disabled]="!f.valid">Dodaj</button>
+    </mdb-card-body>
+  </form>
+</mdb-card>

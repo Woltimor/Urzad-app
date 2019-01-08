@@ -7,16 +7,17 @@ import { TypModel } from '../Models/TypModel';
 import { environment } from 'src/environments/environment';
 import { TypeCategoryModel } from '../Models/TypeCategoryModel';
 import { CategoryOfferModel } from '../Models/CategoryOfferModel';
-
+import {PostCategoryTypeModel} from '../Models/PostCategoryTypeModel';
+import {PostOfferCategoryModel} from '../Models/PostOfferCategoryModel';
 @Injectable()
 export class ManagementService {
     public myUrl = environment.apiUrl;
     constructor(private httpClient: HttpClient) {}
-    postOffer(offerModel: OfferModel) {
-        return this.httpClient.post<OfferModel[]>(this.myUrl + 'management/oferty', offerModel);
+    postOffer(offerModel: PostOfferCategoryModel) {
+        return this.httpClient.post<PostOfferCategoryModel[]>(this.myUrl + 'management/oferty', offerModel);
     }
-    postOfferCategory(offerCategoryModel: CategoryModel) {
-        return this.httpClient.post<CategoryModel[]>(this.myUrl + 'management/kategorie', offerCategoryModel);
+    postOfferCategory(postCategoryTypeModel: PostCategoryTypeModel) {
+        return this.httpClient.post<PostCategoryTypeModel[]>(this.myUrl + 'management/kategorie', postCategoryTypeModel);
     }
     postOfferType(offerTypModel: TypModel) {
         return this.httpClient.post<TypModel[]>(this.myUrl + 'management/typy', offerTypModel);
@@ -25,8 +26,8 @@ export class ManagementService {
     putOffer(offerModel: OfferModel, id:number) {
         return this.httpClient.put<OfferModel>(this.myUrl + 'management/oferty/'+ id, offerModel);
     }
-    putOfferCategory(offerCategoryModel: CategoryModel,id:number) {
-        return this.httpClient.put<CategoryModel>(this.myUrl + 'management/kategorie/'+ id, offerCategoryModel);
+    putOfferCategory(postCategoryTypeModel: PostCategoryTypeModel,id:number) {
+        return this.httpClient.put<PostCategoryTypeModel>(this.myUrl + 'management/kategorie/'+ id, postCategoryTypeModel);
     }
     putOfferType(offerTypModel: TypModel, id:number) {
         return this.httpClient.put<TypModel>(this.myUrl + 'management/typy/'+ id, offerTypModel);
@@ -42,7 +43,6 @@ export class ManagementService {
     getOfferType(): Observable<TypModel>{
         return this.httpClient.get<TypModel>(this.myUrl +'management/typy');
     }
-
 
 
     getTypeCategory(): Observable<TypeCategoryModel>{

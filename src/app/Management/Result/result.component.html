@@ -1,14 +1,14 @@
 <mdb-card class="text-white mx-auto" bgColor="morpheus-den-gradient" style="max-width: 200rem">
   <mdb-card-header class="mx-auto">DOSTĘPNE OFERTY PRACY</mdb-card-header>
   <mdb-card-body>
-  <table mdbTable mdbTableScroll scrollY="true" maxHeight="200" bordered="true">
+    <table mdbTable mdbTableScroll scrollY="true" maxHeight="200" bordered="true">
       <thead>
         <tr>
           <th *ngFor="let head of headElements; let i = index" scope="col">{{head}}</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let el of offers; let i = index; " >
+        <tr *ngFor="let el of offers; let i = index; ">
           <th scope="row">{{el.idOferty}}</th>
           <td>{{el.opisTypu}}</td>
           <td>{{el.nazwa}}</td>
@@ -17,4 +17,4 @@
       </tbody>
     </table>
   </mdb-card-body>
-  </mdb-card>
+</mdb-card>
