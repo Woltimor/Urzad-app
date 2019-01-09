@@ -1,5 +1,5 @@
 export class User {
-    IdOsoby: number;
+    idOsoby: number;
     Login: string;
     Haslo: string;
     Imie: string;
@@ -11,4 +11,13 @@ export class User {
     Plec:string;
     Uprawnienia:string;
     token: string;
+    Kwalifikacje:Kwalifikacje[]=[];
+    Wniosek:Wniosek[]=[];
 }
+export class Kwalifikacje{
+Nazwa:string;
+}
+export class Wniosek{
+Opis:string;
+}
+

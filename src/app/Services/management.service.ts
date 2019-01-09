@@ -11,6 +11,8 @@ import {PostCategoryTypeModel} from '../Models/PostCategoryTypeModel';
 import {PostOfferCategoryModel} from '../Models/PostOfferCategoryModel';
 import { QualificationModel } from '../Models/QualificationModel';
 import { PermissionModel } from '../Models/PermissionModel';
+import { ProposalModel } from '../Models/ProposalModel';
+import { User } from '../Models/User';
 @Injectable()
 export class ManagementService {
     public myUrl = environment.apiUrl;
@@ -27,6 +29,9 @@ export class ManagementService {
     postQualification(postQualifications: QualificationModel) {
         return this.httpClient.post<QualificationModel>(this.myUrl + 'management/kwalifikacje', postQualifications);
     }
+    postProposal(proposalModel: ProposalModel) {
+        return this.httpClient.post<ProposalModel>(this.myUrl + 'management/wniosek/', proposalModel);
+    }
     /////////////////////////////////////////////////////////////
     putOffer(postOfferCategoryModel: PostOfferCategoryModel, id:number) {
         return this.httpClient.put<PostOfferCategoryModel>(this.myUrl + 'management/oferty/'+ id, postOfferCategoryModel);
@@ -40,6 +45,7 @@ export class ManagementService {
     putPermission(permissionModel: PermissionModel, id:number) {
         return this.httpClient.put<PermissionModel>(this.myUrl + 'management/uprawnienia/'+ id, permissionModel);
     }
+    
     /////////////////////////////////////////////////////////////
     getOffer(): Observable<OfferModel>{
         return this.httpClient.get<OfferModel>(this.myUrl +'management/oferty');
@@ -60,6 +66,9 @@ export class ManagementService {
     }
     getQualification(): Observable<QualificationModel>{
         return this.httpClient.get<QualificationModel>(this.myUrl +'management/kwalifikacje');
+    }
+    getUserAtributes(id:number): Observable<User>{
+        return this.httpClient.get<User>(this.myUrl +'personalat/'+id);
     }
 
     

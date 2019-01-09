@@ -24,11 +24,11 @@ export class UserService {
     }
 
     update(user: User) {
-        return this.http.put(`${this.myUrl}users/${user.IdOsoby}`, user);
+        return this.http.put(`${this.myUrl}users/${user.idOsoby}`, user);
     }
 
     delete(id: number) {
-        return this.http.delete(`${this.myUrl}users/${id}`);
+        return this.http.delete(this.myUrl+'users/'+{id});
     }
     getUsers(): Observable<User> {
         return this.http.get<User>(this.myUrl + 'Personalat');

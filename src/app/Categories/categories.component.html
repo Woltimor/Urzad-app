@@ -30,7 +30,7 @@
       <thead>
         <tr>
           <th *ngFor="let head of headElements; let i = index" scope="col">{{head}}</th>
-          <th>Złóż CV!</th>
+          <th>Wybierz ofertę!</th>
         </tr>
       </thead>
       <tbody>
@@ -39,6 +39,7 @@
           <td>{{el.opisTypu}}</td>
           <td>{{el.nazwa}}</td>
           <td>{{el.opisOferty}}</td>
+          <td><button type="button" mdbBtn color="green" rounded="true" size="sm" class="my-0" (click)="addOffer(el.idKategorii)"[routerLink]="['/home']" >Dodaj</button></td>
         </tr>
       </tbody>
     </table>

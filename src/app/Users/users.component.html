@@ -18,10 +18,19 @@
           <td>{{user.imie}}</td>
           <td>{{user.nazwisko}}</td>
           <td>{{user.email}}</td>
+          <td>
+            <p *ngFor="let x of user.wniosek">-{{x.nazwa}}<br></p>
+          </td>
           <td><select class="form-control" (change)="function($event)" (click)='downloadId(user.idOsoby)' required>
               <option selected="">{{user.uprawnienia}}</option>
               <option *ngFor="let perm of permission" [value]='perm'>{{perm}}</option>
             </select>
+          </td>
+          <td>
+            <p *ngFor="let y of user.posiadaneKwalifikacjes">-{{y.opis}}<br></p>
+          </td>
+          <td>
+              <a class="btn-floating btn-lg red" (click)='deleteUser(user.idOsoby)' *ngIf="user.uprawnienia==='Użytkownik'"><i class="fa fa-close" aria-hidden="true"></i></a>
           </td>
         </tr>
       </tbody>

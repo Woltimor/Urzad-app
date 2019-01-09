@@ -1,16 +1,23 @@
 import { Component, OnInit , NgModule } from '@angular/core';
 import { AllOffersModel} from 'src/app/Models/AllOffersModel';
 import { OfferService } from '../Services/offer.service';
+import { User } from '../Models/User';
+import { ManagementService } from '../Services/management.service';
+import { ProposalModel } from '../Models/ProposalModel';
 
 @Component({
   selector: 'app-categories',
   templateUrl: './categories.component.html',
   styleUrls: ['./categories.component.css'],
-  providers:[OfferService]
+  providers:[OfferService,ManagementService]
 })
 export class CategoriesComponent implements OnInit {
-  constructor(private offerService: OfferService) { }
-
+  constructor(private offerService: OfferService, private managementService: ManagementService) { }
+  
+  userToken: User;
+  idOsoby:number =0;
+  idKategorii:number=0;
+  proposalModel:ProposalModel = new ProposalModel;
   types:AllOffersModel[]=[];
   temporary:AllOffersModel[]=[];
   type:string[]=[];
@@ -48,7 +55,11 @@ onChange3(z) {
   this.selectedZ=true;
 }else this.temporary = this.types.filter(t=>t.opisOferty === z.value);
 }
-
+addOffer(id:number){
+this.proposalModel.IdKategorii = id;
+this.proposalModel.IdOsoby= this.userToken.idOsoby;
+this.managementService.postProposal(this.proposalModel).subscribe(l=>this.proposalModel=l);
+}
   ngOnInit() {
     this.offerService.getAllOffers().subscribe((type: AllOffersModel[]) =>{
       this.types=type.filter((nazwa, i , s)=> i === s.indexOf(nazwa));
@@ -59,5 +70,6 @@ onChange3(z) {
       this.category=  this.category.filter((nazwa, i , s)=> i === s.indexOf(nazwa));
       this.offer = this.types.map(t=>t.opisOferty);
       });
+      this.userToken = JSON.parse(localStorage.getItem('currentUser'));
   }
 }
