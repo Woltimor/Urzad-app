@@ -13,7 +13,6 @@ export class DownloadComponent implements OnInit {
 downloadFile(id){
   this.downloadService.getFile(id).subscribe(fileData => 
     {
-      console.log('start download');
     let b:any = new Blob([fileData], { type: 'application/text' });
     var url= window.URL.createObjectURL(b);
     var a = document.createElement('a');

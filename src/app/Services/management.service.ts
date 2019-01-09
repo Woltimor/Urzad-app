@@ -9,6 +9,8 @@ import { TypeCategoryModel } from '../Models/TypeCategoryModel';
 import { CategoryOfferModel } from '../Models/CategoryOfferModel';
 import {PostCategoryTypeModel} from '../Models/PostCategoryTypeModel';
 import {PostOfferCategoryModel} from '../Models/PostOfferCategoryModel';
+import { QualificationModel } from '../Models/QualificationModel';
+import { PermissionModel } from '../Models/PermissionModel';
 @Injectable()
 export class ManagementService {
     public myUrl = environment.apiUrl;
@@ -22,15 +24,21 @@ export class ManagementService {
     postOfferType(offerTypModel: TypModel) {
         return this.httpClient.post<TypModel[]>(this.myUrl + 'management/typy', offerTypModel);
     }
+    postQualification(postQualifications: QualificationModel) {
+        return this.httpClient.post<QualificationModel>(this.myUrl + 'management/kwalifikacje', postQualifications);
+    }
     /////////////////////////////////////////////////////////////
-    putOffer(offerModel: OfferModel, id:number) {
-        return this.httpClient.put<OfferModel>(this.myUrl + 'management/oferty/'+ id, offerModel);
+    putOffer(postOfferCategoryModel: PostOfferCategoryModel, id:number) {
+        return this.httpClient.put<PostOfferCategoryModel>(this.myUrl + 'management/oferty/'+ id, postOfferCategoryModel);
     }
     putOfferCategory(postCategoryTypeModel: PostCategoryTypeModel,id:number) {
         return this.httpClient.put<PostCategoryTypeModel>(this.myUrl + 'management/kategorie/'+ id, postCategoryTypeModel);
     }
     putOfferType(offerTypModel: TypModel, id:number) {
         return this.httpClient.put<TypModel>(this.myUrl + 'management/typy/'+ id, offerTypModel);
+    }
+    putPermission(permissionModel: PermissionModel, id:number) {
+        return this.httpClient.put<PermissionModel>(this.myUrl + 'management/uprawnienia/'+ id, permissionModel);
     }
     /////////////////////////////////////////////////////////////
     getOffer(): Observable<OfferModel>{
@@ -44,12 +52,14 @@ export class ManagementService {
         return this.httpClient.get<TypModel>(this.myUrl +'management/typy');
     }
 
-
     getTypeCategory(): Observable<TypeCategoryModel>{
         return this.httpClient.get<TypeCategoryModel>(this.myUrl +'management/typy/kategorie');
     }
     getCategoryOffer(): Observable<CategoryOfferModel>{
         return this.httpClient.get<CategoryOfferModel>(this.myUrl +'management/kategorie/oferty');
+    }
+    getQualification(): Observable<QualificationModel>{
+        return this.httpClient.get<QualificationModel>(this.myUrl +'management/kwalifikacje');
     }
 
     

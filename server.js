@@ -33,7 +33,7 @@ app.post('/send', function (req, res) {
   let senderName = req.body.contactFormName;
   let senderEmail = req.body.contactFormEmail;
   let messageSubject = req.body.contactFormSubjects;
-  let messageText = req.body.contactFormMessage;
+  let messageText = 'Imię: '+req.body.contactFormName+', E-mail: '+req.body.contactFormEmail+' Wiadomość: '+req.body.contactFormMessage;
   let copyToSender = req.body.contactFormCopy;
 
   let mailOptions = {

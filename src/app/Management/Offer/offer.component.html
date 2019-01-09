@@ -20,7 +20,7 @@
           <td>{{off.nazwa}}</td>
           <td>{{off.opisOferty}}</td>
           <td>
-            <button type="button" mdbBtn color="green" rounded="true" size="sm" class="my-0">Edit</button>
+            <button type="button" mdbBtn color="green" rounded="true" size="sm" class="my-0" [routerLink]="['/management/offer/edit-offer', off.idOferty, off.nazwa, off.opisOferty, off.idKategorii, off.opisTypu]">Edit</button>
           </td>
         </tr>
       </tbody>

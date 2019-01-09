@@ -1,21 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-import { ManagementService } from 'src/app/Services/management.service';
-import {CategoryOfferModel} from 'src/app/Models/CategoryOfferModel'
+import { OfferService } from 'src/app/Services/offer.service';
+import {AllOffersModel} from 'src/app/Models/AllOffersModel'
 @Component({
   selector: 'app-offer',
   templateUrl: './offer.component.html',
   styleUrls: ['./offer.component.scss'],
-  providers:[ManagementService]
+  providers:[OfferService]
 })
 export class OfferComponent implements OnInit {
-  offers:CategoryOfferModel;
+  offers:AllOffersModel[]=[];
 
   headElements = ['Numer oferty','Nazwa kategorii', 'Nazwa oferty'];
 
-  constructor(private managementService:ManagementService) { }
+  constructor(private offerService:OfferService) { }
 
   ngOnInit() {
-    this.managementService.getCategoryOffer().subscribe(l => this.offers = l);
+    this.offerService.getAllOffers().subscribe(l => this.offers = l);
   }
 
 }

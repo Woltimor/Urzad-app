@@ -1,0 +1,34 @@
+<mdb-card class="text-white mx-auto" bgColor="morpheus-den-gradient" style="max-width: 150rem">
+  <span class="table-add float-left">
+    <a class="text-success" (click)="toggleBool()">Dodaj kwalifikacje
+      <mdb-icon icon="plus" size="4x"></mdb-icon>
+    </a>
+  </span>
+
+  <div class="float-right" *ngIf="toggled">
+      <p>Dodaj kwalifikacje</p>
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"
+          [(ngModel)]="Opis" name="Opis" required>
+      </div>
+      <button  mdbBtn gradient="peach" size="sm"  routerLink="/management/qualification" type="button" 
+      mdbWavesEffect (click)="postQualification();toggleBool();">Zatwierdź</button>
+  </div>
+
+  <mdb-card-header class="mx-auto">Kategorie</mdb-card-header>
+  <mdb-card-body>
+    <table mdbTable mdbTableScroll scrollY="true" maxHeight="200" bordered="true">
+      <thead>
+        <tr>
+          <th *ngFor="let head of headElements; let i = index" scope="col">{{head}}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let qual of qualifications; let i = index; ">
+          <th scope="row">{{qual.idKwalifikacji}}</th>
+          <td>{{qual.opis}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </mdb-card-body>
+</mdb-card>

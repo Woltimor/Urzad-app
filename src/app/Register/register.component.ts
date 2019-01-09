@@ -10,7 +10,8 @@ import {UserService} from '../Services/user.service';
 
 @Component({
     selector:'app-register',
-    templateUrl: 'register.component.html'})
+    templateUrl: 'register.component.html',
+    styleUrls: ['./register.scss'], })
 export class RegisterComponent implements OnInit {
     registerForm: FormGroup;
 

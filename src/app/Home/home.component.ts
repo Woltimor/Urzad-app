@@ -7,7 +7,8 @@ import {  AuthenticationService } from '../Services/authentication.service';
 import { UserService } from '../Services/user.service';
 
 
-@Component({ templateUrl: 'home.component.html' })
+@Component({ templateUrl: 'home.component.html',
+styleUrls: ['./home.scss'], })
 export class HomeComponent implements OnInit, OnDestroy {
     currentUser: User;
     currentUserSubscription: Subscription;
@@ -24,6 +25,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
     ngOnInit() {
         // this.loadAllUsers();
+        console.log(this.currentUser)
     }
 
     ngOnDestroy() {

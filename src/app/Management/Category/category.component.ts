@@ -9,7 +9,6 @@ import { TypeCategoryModel } from 'src/app/Models/TypeCategoryModel';
 })
 export class CategoryComponent implements OnInit {
   categories:TypeCategoryModel;
-  
   headElements = ['Numer kategorii','Nazwa typu', 'Nazwa kategorii'];
   constructor(private managementService:ManagementService) { }
 

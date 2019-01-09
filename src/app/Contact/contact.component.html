@@ -1,7 +1,9 @@
-<mdb-card class="text-black mx-auto" bgColor="rare-wind-gradient" style="max-width: 200rem">
-  <mdb-card-header class="mx-auto">
-    <p style="font-size:200%;font-family:verdana" class="text-danger">Wyślij wiadomość</p>
-  </mdb-card-header>
+
+<mdb-card class="text-black mx-auto" bgColor="heavy-rain-gradient" style="max-width: 200rem">
+  <h1 class="mx-auto">
+    <p style="font-size:200%;font-family:verdana" class="text-black">Zgłoszenie</p>
+  </h1>
+
   <mdb-card-body>
     <form class="text-center border border-light p-5" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
 
@@ -10,7 +12,6 @@
       <input type="text" formControlName="contactFormName" id="defaultContactFormName" mdbInputDirective class="form-control mb-4"
         placeholder="Imie">
 
-      <!-- Email -->
       <input type="email" formControlName="contactFormEmail" id="defaultContactFormEmail" mdbInputDirective class="form-control mb-4"
         placeholder="E-mail">
 
@@ -22,22 +23,19 @@
         <option value="Zgłoszenie błędu">Zgłoszenie błędu</option>
       </select>
 
-      <!-- Message -->
       <div class="form-group">
         <textarea formControlName="contactFormMessage" class="form-control rounded-0" mdbInputDirective id="exampleFormControlTextarea2"
-          rows="3" placeholder="Message"></textarea>
+          rows="4" placeholder="Message"></textarea>
       </div>
 
-      <!-- Copy -->
       <div class="custom-control custom-checkbox mb-4">
         <input formControlName="contactFormCopy" type="checkbox" class="custom-control-input" id="defaultContactFormCopy">
         <label class="custom-control-label" for="defaultContactFormCopy">
-          <p style="font-size:200%;font-family:verdana" class="text-danger">Kopia</p>
+          <p style="font-size:200%;font-family:verdana" class="text-black">Kopia</p>
         </label>
       </div>
 
-      <!-- Send button -->
-      <button mdbBtn type="button" color="danger" block="true" mdbWavesEffect type="submit" [disabled]="disabledSubmitButton">
+      <button mdbBtn type="button" color="morpheus-den-gradient" block="true" mdbWavesEffect type="submit" [disabled]="disabledSubmitButton">
         <p style="font-size:300%;font-family:verdana">Wyślij</p>
       </button>
 

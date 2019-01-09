@@ -1,3 +1,23 @@
-<p>
-  edit-offer works!
-</p>
+<mdb-card class="text-white mx-auto" bgColor="morpheus-den-gradient" style="max-width: 150rem">
+  <mdb-card-header class="mx-auto">Zmień ofertę pracy</mdb-card-header>
+  <form (ngSubmit)="onSubmit()" #f="ngForm">
+    <mdb-card-body>
+
+      <p>Oferta</p>
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"
+          [(ngModel)]="offer.OpisOferty" name="OpisOferty" required>
+      </div>
+
+
+      <p>Kategoria i typ:</p>
+      <select class="form-control" (change)="function($event)" required>
+        <option selected="">Typ:{{offer.Opis}} Kategoria: {{offer.Nazwa}} </option>
+        <option *ngFor="let typ of typesAndCategories" [value]='typ.idKategorii'>Typ: {{typ.opis}} Kategoria:
+          {{typ.nazwa}}</option>
+      </select>
+
+      <button mdbBtn type="submit" gradient="peach" size="sm" mdbWavesEffect [disabled]="!f.valid">Zapisz zmiany</button>
+    </mdb-card-body>
+  </form>
+</mdb-card>

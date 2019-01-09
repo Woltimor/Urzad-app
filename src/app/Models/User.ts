@@ -9,5 +9,6 @@ export class User {
     Wyksztalcenie: string;
     EMail:string;
     Plec:string;
+    Uprawnienia:string;
     token: string;
 }

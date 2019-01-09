@@ -1,4 +1,4 @@
-export class Qualifications{
-    IdKwalifikacji:String='';
-    Opis:Number=null;
+export class QualificationModel{
+    IdKwalifikacji:Number;
+    Opis:String='';
 }

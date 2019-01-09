@@ -8,11 +8,9 @@ import { HttpClientModule , HTTP_INTERCEPTORS} from '@angular/common/http';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { UserDetailsComponent } from './Users/user-details/user-details.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { OffersComponent } from './offers/offers.component';
 import { ContactComponent } from './contact/contact.component';
 import { ConnectionService } from './Connection.service';
 import { DownloadComponent } from './download/download.component';
-import { OffersDetailsComponent } from './Offers/offers-details/offers-details.component';
 import { AlertComponent } from './Alert/alert.component';
 import { ErrorInterceptor } from './helpers/error.interceptor';
 import { JwtInterceptor } from './helpers/jwt.interceptor';
@@ -30,6 +28,7 @@ import { AddOfferComponent } from './Management/offer/add-offer/add-offer.compon
 import { EditOfferComponent } from './Management/offer/edit-offer/edit-offer.component';
 import { EditTypeComponent } from './Management/type/edit-type/edit-type.component';
 import { AddTypeComponent } from './Management/type/add-type/add-type.component';
+import { QualificationComponent } from './Management/qualification/qualification.component';
 
 
 
@@ -40,10 +39,9 @@ import { AddTypeComponent } from './Management/type/add-type/add-type.component'
     CategoriesComponent,
     UsersComponent,
     UserDetailsComponent,
-    OffersComponent,
+
     ContactComponent,
     DownloadComponent,
-    OffersDetailsComponent,
     AlertComponent,
     HomeComponent,
     LoginComponent,
@@ -59,6 +57,7 @@ import { AddTypeComponent } from './Management/type/add-type/add-type.component'
     EditOfferComponent,
     EditTypeComponent,
     AddTypeComponent,
+    QualificationComponent,
 
   ],
   imports: [
