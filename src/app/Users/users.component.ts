@@ -3,6 +3,7 @@ import { User } from '../Models/User';
 import { UserService } from '../Services/user.service';
 import { ManagementService } from '../Services/management.service';
 import { PermissionModel } from '../Models/PermissionModel';
+import { AccessModel } from '../Models/AccessModel';
 
 @Component({
   selector: 'app-users',
@@ -11,6 +12,7 @@ import { PermissionModel } from '../Models/PermissionModel';
   providers: [UserService, ManagementService]
 })
 export class UsersComponent implements OnInit {
+  accessmodel:AccessModel = new AccessModel;
   id:number=1;
   idOsoby: number = 0;
   permissionModel: PermissionModel = new PermissionModel;
@@ -30,8 +32,16 @@ export class UsersComponent implements OnInit {
 
   }
   deleteUser(id:number){
-    this.id = id;
-    this.userService.delete(this.id).subscribe();
+    this.accessmodel.Dostep = 0;
+    this.managementService.putAccess(this.accessmodel, id).subscribe(l=>this.accessmodel=l);
+    window.location.reload();
+
+  }
+  addUser(id:number){
+    this.accessmodel.Dostep = 1;
+    this.managementService.putAccess(this.accessmodel, id).subscribe(l=>this.accessmodel=l);
+    window.location.reload();
+
   }
 
   ngOnInit() {

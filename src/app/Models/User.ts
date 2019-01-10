@@ -9,6 +9,7 @@ export class User {
     Wyksztalcenie: string;
     EMail:string;
     Plec:string;
+    Dostep:number;
     Uprawnienia:string;
     token: string;
     Kwalifikacje:Kwalifikacje[]=[];

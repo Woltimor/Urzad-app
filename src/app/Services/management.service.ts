@@ -13,6 +13,9 @@ import { QualificationModel } from '../Models/QualificationModel';
 import { PermissionModel } from '../Models/PermissionModel';
 import { ProposalModel } from '../Models/ProposalModel';
 import { User } from '../Models/User';
+import { AchievementModel } from '../Models/AchievementModel';
+import { AccessModel } from '../Models/AccessModel';
+import { ShowAchievementsModel } from '../Models/ShowAchievementModel';
 @Injectable()
 export class ManagementService {
     public myUrl = environment.apiUrl;
@@ -32,6 +35,9 @@ export class ManagementService {
     postProposal(proposalModel: ProposalModel) {
         return this.httpClient.post<ProposalModel>(this.myUrl + 'management/wniosek/', proposalModel);
     }
+    postAchievement(achievementModel: AchievementModel) {
+        return this.httpClient.post<AchievementModel>(this.myUrl + 'management/osiagniecia/', achievementModel);
+    }
     /////////////////////////////////////////////////////////////
     putOffer(postOfferCategoryModel: PostOfferCategoryModel, id:number) {
         return this.httpClient.put<PostOfferCategoryModel>(this.myUrl + 'management/oferty/'+ id, postOfferCategoryModel);
@@ -44,6 +50,9 @@ export class ManagementService {
     }
     putPermission(permissionModel: PermissionModel, id:number) {
         return this.httpClient.put<PermissionModel>(this.myUrl + 'management/uprawnienia/'+ id, permissionModel);
+    }
+    putAccess(accessModel: AccessModel, id:number) {
+        return this.httpClient.put<AccessModel>(this.myUrl + 'management/dostep/'+ id, accessModel);
     }
     
     /////////////////////////////////////////////////////////////
@@ -69,6 +78,9 @@ export class ManagementService {
     }
     getUserAtributes(id:number): Observable<User>{
         return this.httpClient.get<User>(this.myUrl +'personalat/'+id);
+    }
+    getAchievements(id:number): Observable<ShowAchievementsModel>{
+        return this.httpClient.get<ShowAchievementsModel>(this.myUrl +'personalat/osiagniecia/'+id);
     }
 
     

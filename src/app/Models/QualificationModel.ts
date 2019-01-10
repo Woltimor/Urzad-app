@@ -1,4 +1,4 @@
 export class QualificationModel{
-    IdKwalifikacji:Number;
+    IdKwalifikacji:Number=0;
     Opis:String='';
 }

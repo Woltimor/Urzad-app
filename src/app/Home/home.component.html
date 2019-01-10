@@ -18,16 +18,23 @@
             <div class="row">E-mail: {{currentUser.eMail}}</div>
             <div class="row">Wykształcenia: {{currentUser.wyksztalcenie}}</div>
             <div class="row" (click)="showCategories()"><a class="new">Wybrane kategorie pracy</a>
+
+            </div>
+            <div class="row" (click)="showAchievements()"><a class="new">Osiągnięcia</a></div>
+            <div class="row" (click)="showQualifications()"><a class="new">Dodaj osiągnięcia</a>
+                <select class="form-control" (change)="function($event)" required *ngIf="toggleQualifications">
+                    <option *ngFor="let qual of qualifications" [value]='qual.idKwalifikacji'>{{qual.opis}}</option>
+                </select>
+            </div>
+            <div class="row">
+                <mdb-card *ngIf="toggleAchievements">
+                    <mdb-card-body *ngFor="let kwal of userAtributes.posiadaneKwalifikacjes">
+                        {{kwal.opis}}
+                    </mdb-card-body>
+                </mdb-card>
                 <mdb-card *ngIf="toggleCategories">
                     <mdb-card-body *ngFor="let wn of userAtributes.wniosek">
                         {{wn.nazwa}}
-                    </mdb-card-body>
-                </mdb-card>
-            </div>
-            <div class="row" (click)="showAchievements()"><a class="new">Osiągnięcia</a>
-                <mdb-card *ngIf="toggleAchievements">
-                    <mdb-card-body *ngFor="let kwal of userAtributes.kwalifikacje" >
-                       {{kwal.opis}}
                     </mdb-card-body>
                 </mdb-card>
             </div>

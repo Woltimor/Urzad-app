@@ -4,6 +4,7 @@ import { OfferService } from '../Services/offer.service';
 import { User } from '../Models/User';
 import { ManagementService } from '../Services/management.service';
 import { ProposalModel } from '../Models/ProposalModel';
+import { ShowAchievementsModel } from '../Models/ShowAchievementModel';
 
 @Component({
   selector: 'app-categories',
@@ -13,7 +14,9 @@ import { ProposalModel } from '../Models/ProposalModel';
 })
 export class CategoriesComponent implements OnInit {
   constructor(private offerService: OfferService, private managementService: ManagementService) { }
-  
+  getAchievements:ShowAchievementsModel;
+  idOferty:number=0;
+  toggleAchievements=false;
   userToken: User;
   idOsoby:number =0;
   idKategorii:number=0;
@@ -23,7 +26,7 @@ export class CategoriesComponent implements OnInit {
   type:string[]=[];
   category:string[]=[];
   offer:string[]=[];
-  headElements = ['Numer Oferty', 'Typ Oferty', 'Kategoria Oferty', 'Oferta'];
+  headElements = ['Numer Oferty', 'Typ Oferty', 'Kategoria Oferty', 'Oferta', 'Wybierz ofertę!'];
   selectedX:boolean= false;
   selectedY:boolean= false;
   selectedZ:boolean= false;
@@ -60,6 +63,11 @@ this.proposalModel.IdKategorii = id;
 this.proposalModel.IdOsoby= this.userToken.idOsoby;
 this.managementService.postProposal(this.proposalModel).subscribe(l=>this.proposalModel=l);
 }
+showAchievements(id){
+  this.toggleAchievements=!this.toggleAchievements;
+  this.managementService.getAchievements(id).subscribe(l=>this.getAchievements=l)
+}
+
   ngOnInit() {
     this.offerService.getAllOffers().subscribe((type: AllOffersModel[]) =>{
       this.types=type.filter((nazwa, i , s)=> i === s.indexOf(nazwa));

@@ -30,7 +30,8 @@
             <p *ngFor="let y of user.posiadaneKwalifikacjes">-{{y.opis}}<br></p>
           </td>
           <td>
-              <a class="btn-floating btn-lg red" (click)='deleteUser(user.idOsoby)' *ngIf="user.uprawnienia==='Użytkownik'"><i class="fa fa-close" aria-hidden="true"></i></a>
+              <a class="btn-floating btn-lg red" (click)='deleteUser(user.idOsoby)' *ngIf="user.dostep===1"><i class="fa fa-user-times" aria-hidden="true"> Zablokuj</i></a>
+              <a class="btn-floating btn-lg green" (click)='addUser(user.idOsoby)' *ngIf="user.dostep===0"><i class="fa fa-user" aria-hidden="true"> Dodaj</i></a>
           </td>
         </tr>
       </tbody>

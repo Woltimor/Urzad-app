@@ -1,0 +1,6 @@
+.new:hover{
+    text-decoration-line: underline;
+       cursor: pointer;
+       color:aqua;
+       font-size: 130%
+   }
