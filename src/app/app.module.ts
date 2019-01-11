@@ -18,7 +18,6 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { TypeComponent } from './Management/type/type.component';
-import { RequiredComponent } from './Management/required/required.component';
 import { ResultComponent } from './Management/result/result.component';
 import { OfferComponent } from './Management/offer/offer.component';
 import { CategoryComponent } from './Management/category/category.component';
@@ -49,7 +48,6 @@ import { CvDownloadComponent } from './CV/cv-download/cv-download.component';
     LoginComponent,
     RegisterComponent,
     TypeComponent,
-    RequiredComponent,
     ResultComponent,
     OfferComponent,
     CategoryComponent,

@@ -25,11 +25,11 @@
 
 <mdb-card class="text-white mx-auto" bgColor="morpheus-den-gradient" style="max-width: 120rem">
   <mdb-card-header class="mx-auto">DOSTĘPNE OFERTY PRACY</mdb-card-header>
- 
+
   <mdb-card-body>
-      <a class="float-right" *ngIf="toggleAchievements" > 
-          <p *ngFor="let get of getAchievements">{{get.opis}}</p>
-      </a>
+    <a class="float-right" *ngIf="toggleAchievements">
+      <p *ngFor="let get of getAchievements">{{get.opis}}</p>
+    </a>
     <table mdbTable mdbTableScroll scrollY="true" maxHeight="200" bordered="true">
       <thead>
         <tr>
@@ -46,6 +46,11 @@
           <td><button type="button" mdbBtn color="green" rounded="true" size="sm" class="my-0" (click)="addOffer(el.idKategorii)"
               [routerLink]="['/home']">Dodaj</button></td>
           <td><a class="new" (click)="showAchievements(el.idOferty)">Pokaż wymagane osiągnięcia</a>
+          </td>
+          <td *ngIf="currentUser && currentUser.uprawnienia==='Administrator'"><select class="form-control" (change)="function($event)" (click)='downloadId(el.idOferty)' required>
+            <option selected=''>Dodaj nowe wymagane kwalifikacje</option>
+              <option *ngFor="let qual of qualifications" [value]='qual.idKwalifikacji'>{{qual.opis}}</option>
+            </select>
           </td>
         </tr>
       </tbody>

@@ -14,7 +14,6 @@ import { CategoryComponent } from './Management/category/category.component';
 import { OfferComponent } from './Management/offer/offer.component';
 import { ResultComponent } from './Management/result/result.component';
 import { TypeComponent } from './Management/type/type.component';
-import { RequiredComponent } from './Management/required/required.component';
 import { AddTypeComponent } from './Management/type/add-type/add-type.component';
 import { EditTypeComponent } from './Management/type/edit-type/edit-type.component';
 import { AddOfferComponent } from './Management/offer/add-offer/add-offer.component';
@@ -45,7 +44,6 @@ const appRoutes: Routes = [
     { path: 'management/offer', component: OfferComponent, canActivate: [RoleGuard] },
     { path: 'management/result', component: ResultComponent, canActivate: [RoleGuard] },
     { path: 'management/type', component: TypeComponent, canActivate: [RoleGuard] },
-    { path: 'management/required', component: RequiredComponent, canActivate: [RoleGuard] },
     { path: 'management/qualification', component: QualificationComponent, canActivate: [RoleGuard] },
 
     { path: 'management/type/add-type', component: AddTypeComponent, canActivate: [RoleGuard] },

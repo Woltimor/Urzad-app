@@ -16,6 +16,7 @@ import { User } from '../Models/User';
 import { AchievementModel } from '../Models/AchievementModel';
 import { AccessModel } from '../Models/AccessModel';
 import { ShowAchievementsModel } from '../Models/ShowAchievementModel';
+import { ExpectedAchievementsModel } from '../Models/ExpectedAchievementsModel';
 @Injectable()
 export class ManagementService {
     public myUrl = environment.apiUrl;
@@ -37,6 +38,9 @@ export class ManagementService {
     }
     postAchievement(achievementModel: AchievementModel) {
         return this.httpClient.post<AchievementModel>(this.myUrl + 'management/osiagniecia/', achievementModel);
+    }
+    postExpectedAchievement(expectedAchievementsModel: ExpectedAchievementsModel) {
+        return this.httpClient.post<ExpectedAchievementsModel>(this.myUrl + 'management/wymagane/', expectedAchievementsModel);
     }
     /////////////////////////////////////////////////////////////
     putOffer(postOfferCategoryModel: PostOfferCategoryModel, id:number) {
