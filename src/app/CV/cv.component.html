@@ -1,0 +1,119 @@
+
+<mdb-card class="cards"  bgColor="cloudy-knoxville-gradient" style="max-width: 150rem">
+  <h1 class="header1">Generator CV</h1>
+  <mdb-card-body>
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">Imie</span>
+      </div>
+      <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" [(ngModel)]='Imie'>
+    </div>
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">Nazwisko</span>
+      </div>
+      <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1"[(ngModel)]='Nazwisko'>
+    </div>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">Data urodzenia</span>
+      </div>
+      <input type="date" class="form-control" placeholder="Nazwisko" aria-label="Username" aria-describedby="basic-addon1"[(ngModel)]='DataUr'>
+    </div>
+
+    <div class="input-group mb-3">
+      <input type="email" class="form-control" placeholder="E-mail" aria-label="Recipient's username" aria-describedby="basic-addon2"[(ngModel)]='Email'>
+      <div class="input-group-append">
+        <span class="input-group-text" id="basic-addon2">email@example.com </span>
+      </div>
+    </div>
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">Nr tel.</span>
+      </div>
+      <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1"[(ngModel)]='NrTel'>
+    </div>
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">Adres</span>
+      </div>
+      <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1"[(ngModel)]='Adres'>
+      <div class="input-group-append">
+        <span class="input-group-text" id="basic-addon2">np. Warszawa, ul. Kaliskiego 1c</span>
+      </div>
+    </div>
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">Kod pocztowy</span>
+      </div>
+      <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1"[(ngModel)]='KodP'>
+    </div>
+
+
+
+    <label for="basic-url">Zainteresowania</label>
+
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Zainteresowania</span>
+      </div>
+      <textarea class="form-control" aria-label="With textarea" [(ngModel)]='Zainteresowania'></textarea>
+    </div>
+
+
+    <label for="basic-url">Doświadczenie</label>
+
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Data i zdobyte kwalifikacje</span>
+      </div>
+      <input type="date" aria-label="Data" class="form-control"[(ngModel)]='DataKwal'>
+      <input type="text" aria-label="Kwalifikacje" class="form-control"[(ngModel)]='KwalD'>
+    </div>
+
+
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Dodatkowe kwalifikacje</span>
+      </div>
+      <textarea class="form-control" aria-label="With textarea"[(ngModel)]='DodKwal'></textarea>
+    </div>
+
+    <label for="basic-url">Edukacja</label>
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Data i ukończone uczelnie</span>
+      </div>
+      <input type="date" aria-label="D" class="form-control"[(ngModel)]='DataEdu'>
+      <input type="text" aria-label="Kwalifikacje" class="form-control"[(ngModel)]='Edu'>
+    </div>
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Pozostałe Uczelnie</span>
+      </div>
+      <textarea class="form-control" aria-label="With textarea"[(ngModel)]='DodEdu'></textarea>
+    </div>
+
+    <label for="basic-url">Krótki opis siebie</label>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Opis</span>
+      </div>
+      <textarea class="form-control" aria-label="With textarea"[(ngModel)]='Opis'></textarea>
+    </div>
+<button (click)="generateCv()">Podgląd Cv</button>
+
+
+
+  </mdb-card-body>
+</mdb-card>

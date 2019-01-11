@@ -8,18 +8,19 @@
     </mdb-navbar-brand>
     <links>
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item waves-light" mdbWavesEffect>
+        <li class="nav-item waves-light" mdbWavesEffect *ngIf="currentUser && currentUser.uprawnienia==='Administrator'">
           <a class="nav-link" routerLink="/users">
             <p style="font-size:140%;font-family:verdana;color:#fbe9e7">Użytkownicy</p>
           </a>
         </li>
-        <li class="nav-item waves-light" mdbWavesEffect>
+        <li class="nav-item waves-light" mdbWavesEffect *ngIf="currentUser">
           <a class="nav-link" routerLink="/categories">
             <p style="font-size:140%;font-family:verdana;color:#ffccbc">Przegląd ofert</p>
           </a>
         </li>
 
-        <li class="nav-item dropdown" dropdown>
+        <li class="nav-item dropdown" dropdown
+        *ngIf="currentUser && currentUser.uprawnienia==='Administrator'">
           <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
             <p style="font-size:140%;font-family:verdana;color:#ffab91">Panel zarządzania</p>
           </a>

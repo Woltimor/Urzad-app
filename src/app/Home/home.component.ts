@@ -34,9 +34,11 @@ export class HomeComponent implements OnInit, OnDestroy {
 
 
     ngOnInit() {
+        console.log(this.currentUser)
         // this.loadAllUsers();
         this.managementService.getQualification().subscribe(l => this.qualifications = l);
         this.managementService.getUserAtributes(this.currentUser.idOsoby).subscribe(l=>this.userAtributes=l);
+        localStorage.removeItem('cvModel');
     }
 
     ngOnDestroy() {

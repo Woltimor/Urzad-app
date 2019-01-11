@@ -10,7 +10,7 @@ export class User {
     EMail:string;
     Plec:string;
     Dostep:number;
-    Uprawnienia:string;
+    uprawnienia:string;
     token: string;
     Kwalifikacje:Kwalifikacje[]=[];
     Wniosek:Wniosek[]=[];

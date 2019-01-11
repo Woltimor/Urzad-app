@@ -29,6 +29,8 @@ import { EditOfferComponent } from './Management/offer/edit-offer/edit-offer.com
 import { EditTypeComponent } from './Management/type/edit-type/edit-type.component';
 import { AddTypeComponent } from './Management/type/add-type/add-type.component';
 import { QualificationComponent } from './Management/qualification/qualification.component';
+import { CVComponent } from './cv/cv.component';
+import { CvDownloadComponent } from './CV/cv-download/cv-download.component';
 
 
 
@@ -58,6 +60,8 @@ import { QualificationComponent } from './Management/qualification/qualification
     EditTypeComponent,
     AddTypeComponent,
     QualificationComponent,
+    CVComponent,
+    CvDownloadComponent,
 
   ],
   imports: [

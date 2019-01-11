@@ -26,6 +26,7 @@
                     <option *ngFor="let qual of qualifications" [value]='qual.idKwalifikacji'>{{qual.opis}}</option>
                 </select>
             </div>
+            <div class="row"><a class="new" routerLink="/cv">Generator CV</a></div>
             <div class="row">
                 <mdb-card *ngIf="toggleAchievements">
                     <mdb-card-body *ngFor="let kwal of userAtributes.posiadaneKwalifikacjes">

@@ -1,0 +1,30 @@
+<div class="card">
+    <a mdbBtn type="button" (click)="downloadCV()" gradient="peach" [routerLink]="['/home']" routerLinkActive="router-link-active"  rounded="true" href= mdbWavesEffect>Pobierz swoje CV!</a>
+<div id="content" style="padding: 10px;" #content invisible>
+  <h1 class="lol">Curriculum Vitae</h1>
+  <hr/>
+  <p class="dane"><i class="fa fa-user"></i>Dane personalne</p>
+  <p class="info">Imie: {{cvModel.Imie}} </p>
+  <p class="info">Nazwisko: {{cvModel.Nazwisko}} </p>
+  <p class="info">Data urodzenia: {{cvModel.DataUr}}</p>
+  <p class="info">E-mail: {{cvModel.Email}}</p>
+  <p class="info">Nr telefonu: {{cvModel.NrTel}}</p>
+  <p class="info">Adres: {{cvModel.Adres}}  {{cvModel.KodP}} </p>
+  <hr/>
+  <p class="dane"><i class="fa fa-book"></i>Wykształcenie</p>
+  <p class="info">{{cvModel.DataEdu}}  {{cvModel.Edu}} </p>
+  <p class="info">{{cvModel.DodEdu}}</p>
+  <hr/>
+  <p class="dane"><i class="fa fa-star"></i>Doświadczenie zawodowe</p>
+  <p class="info">{{cvModel.DataKwal}}  {{cvModel.KwalD}} </p>
+  <p class="info">{{cvModel.DodKwal}}</p>
+  <hr/>
+  <p class="dane"><i class="fa fa-trophy"></i>Umiejętności i zainteresowania</p>
+  <p class="info">{{cvModel.Zainteresowania}}</p>
+  <hr/>
+  <p class="dane"><i class="fa fa-magic"></i>Klilka słów na mój temat</p>
+  <p class="info">{{cvModel.Opis}}</p>
+</div>
+
+</div>
+
