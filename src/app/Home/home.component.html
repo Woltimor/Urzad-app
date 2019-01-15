@@ -30,12 +30,12 @@
             <div class="row">
                 <mdb-card *ngIf="toggleAchievements">
                     <mdb-card-body *ngFor="let kwal of userAtributes.posiadaneKwalifikacjes">
-                        {{kwal.opis}}
+                     -{{kwal.opis}}
                     </mdb-card-body>
                 </mdb-card>
                 <mdb-card *ngIf="toggleCategories">
                     <mdb-card-body *ngFor="let wn of userAtributes.wniosek">
-                        {{wn.nazwa}}
+                        Kategoria pracy: {{wn.nazwa}} Typ: {{wn.opis}}
                     </mdb-card-body>
                 </mdb-card>
             </div>
