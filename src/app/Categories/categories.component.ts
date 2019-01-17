@@ -38,7 +38,7 @@ export class CategoriesComponent implements OnInit {
   type: string[] = [];
   category: string[] = [];
   offer: string[] = [];
-  headElements = ['Numer Oferty', 'Typ Oferty', 'Kategoria Oferty', 'Oferta', 'Wybierz ofertę!'];
+  headElements = ['Numer Oferty', 'Typ Oferty', 'Kategoria Oferty', 'Oferta','Adres Pracodawcy', 'Email Pracodawcy','Pensja', 'Wybierz ofertę!'];
   selectedX: boolean = false;
   selectedY: boolean = false;
   selectedZ: boolean = false;

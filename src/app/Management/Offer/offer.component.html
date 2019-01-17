@@ -7,7 +7,7 @@
   <mdb-card-header class="mx-auto">Oferty</mdb-card-header>
   <mdb-card-body>
 
-    <table mdbTable mdbTableScroll scrollY="true" maxHeight="200" bordered="true">
+    <table mdbTable mdbTableScroll scrollY="true" maxHeight="300" bordered="true">
       <thead>
         <tr>
           <th *ngFor="let head of headElements; let i = index" scope="col">{{head}}</th>
@@ -19,8 +19,11 @@
           <th scope="row">{{off.idOferty}}</th>
           <td>{{off.nazwa}}</td>
           <td>{{off.opisOferty}}</td>
+          <td>{{off.email}}</td>
+          <td>{{off.pensja}}</td>
+          <td>{{off.adresFirmy}}</td>
           <td>
-            <button type="button" mdbBtn color="green" rounded="true" size="sm" class="my-0" [routerLink]="['/management/offer/edit-offer', off.idOferty, off.nazwa, off.opisOferty, off.idKategorii, off.opisTypu]">Edit</button>
+            <button type="button" mdbBtn color="green" rounded="true" size="sm" class="my-0" [routerLink]="['/management/offer/edit-offer', off.idOferty, off.nazwa, off.opisOferty, off.idKategorii, off.opisTypu, off.email,off.pensja,off.adresFirmy]">Edit</button>
           </td>
         </tr>
       </tbody>

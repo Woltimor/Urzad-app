@@ -10,7 +10,7 @@ import {AllOffersModel} from 'src/app/Models/AllOffersModel'
 export class OfferComponent implements OnInit {
   offers:AllOffersModel[]=[];
 
-  headElements = ['Numer oferty','Nazwa kategorii', 'Nazwa oferty'];
+  headElements = ['Numer oferty','Nazwa kategorii', 'Nazwa oferty', 'Email', 'Pensja', 'Adres'];
 
   constructor(private offerService:OfferService) { }
 

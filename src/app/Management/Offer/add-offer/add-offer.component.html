@@ -9,6 +9,27 @@
         <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"
           [(ngModel)]="OpisOferty" name="OpisOferty" placeholder="Oferta" required>
       </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-default">Pensja</span>
+        </div>
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"
+          [(ngModel)]="pensja" name="pensja" placeholder="Pensja" required>
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-default">Adres firmy</span>
+        </div>
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"
+          [(ngModel)]="adresFirmy" name="adresFirmy" placeholder="Adres firmy" required>
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-default">Email</span>
+        </div>
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"
+          [(ngModel)]="email" name="email" placeholder="Email" required>
+      </div>
       <p>Wybierz kategorię i typ oferty</p>
       <select class="browser-default custom-select" [(ngModel)]="IdKategorii" name="IdKategorii">
         <option selected>Wybierz kategorię i typ oferty</option>

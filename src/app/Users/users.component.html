@@ -1,12 +1,7 @@
 <mdb-card class="text-white mx-auto" bgColor="morpheus-den-gradient" style="max-width: 150rem">
-  <span class="table-add float-right">
-    <a class="text-success" routerLink="/users/user-details">Dodaj użytkownika
-      <mdb-icon icon="plus" size="4x"></mdb-icon>
-    </a>
-  </span>
   <h1 class="mx-auto">Użytkownicy</h1>
   <mdb-card-body>
-    <table mdbTable mdbTableScroll scrollY="true" maxHeight="200" bordered="true">
+    <table mdbTable mdbTableScroll scrollY="true" maxHeight="300" bordered="true">
       <thead>
         <tr>
           <th *ngFor="let head of headElements; let i = index" scope="col">{{head}}</th>

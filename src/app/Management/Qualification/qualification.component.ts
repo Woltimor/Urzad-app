@@ -14,7 +14,7 @@ export class QualificationComponent implements OnInit {
   Opis:String='';
   qualifications:QualificationModel;
   postQualifications:QualificationModel = new QualificationModel;
-  headElements = ['Numer kwalifikacji','kwalifikacja'];
+  headElements = ['Numer kwalifikacji','Kwalifikacja'];
   constructor(private managementService: ManagementService) { }
   toggleBool(){
     this.toggled=!this.toggled;

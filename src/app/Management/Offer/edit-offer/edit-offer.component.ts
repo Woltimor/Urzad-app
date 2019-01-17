@@ -14,7 +14,7 @@ export class EditOfferComponent implements OnInit {
 
   postOfferCategoryModel: PostOfferCategoryModel = new PostOfferCategoryModel;
   typesAndCategories:TypeCategoryModel;
-  offer: { IdOferty: number, Nazwa: string, OpisOferty: String, IdKategorii:number, Opis: string };
+  offer: { IdOferty: number, Nazwa: string, OpisOferty: String, IdKategorii:number, Opis: string, email:string, pensja:number,adresFirmy:string };
   constructor(private route: ActivatedRoute, private managementService: ManagementService, private router: Router) { }
 
   ngOnInit() {
@@ -26,12 +26,19 @@ export class EditOfferComponent implements OnInit {
         OpisOferty: this.route.snapshot.params['opisOferty'],
         IdKategorii: this.route.snapshot.params['idKategorii'],
         Opis: this.route.snapshot.params['opis'],
+        email: this.route.snapshot.params['email'],
+        pensja: this.route.snapshot.params['pensja'],
+        adresFirmy:this.route.snapshot.params['adresFirmy']
       }
       this.managementService.getTypeCategory().subscribe(l => this.typesAndCategories = l);
   }
 
   initializeAtributes() {
      this.postOfferCategoryModel.OpisOferty = this.offer.OpisOferty;
+     this.postOfferCategoryModel.adresFirmy = this.offer.adresFirmy;
+     this.postOfferCategoryModel.email = this.offer.email;
+     this.postOfferCategoryModel.pensja = this.offer.pensja;
+
   }
 
   function(Id) {
@@ -41,8 +48,7 @@ export class EditOfferComponent implements OnInit {
   onSubmit() {
     this.initializeAtributes();
     this.managementService.putOffer(this.postOfferCategoryModel, this.offer.IdOferty).subscribe(l => this.postOfferCategoryModel = l);
-    console.log(this.postOfferCategoryModel);
-    this.router.navigate(['/management/category']);
+    this.router.navigate(['/management/offer']);
   }
 
 }

@@ -1,12 +1,12 @@
 <mdb-card class="text-white mx-auto" bgColor="morpheus-den-gradient" style="max-width: 150rem">
   <span class="table-add float-right">
-    <a class="text-success" routerLink="/management/type/add-type">Dodaj nawy typ oferty
+    <a class="text-success" routerLink="/management/type/add-type">Dodaj nowy typ oferty
       <mdb-icon icon="plus" size="4x"></mdb-icon>
     </a>
   </span>
   <mdb-card-header class="mx-auto">Typy Ofert</mdb-card-header>
   <mdb-card-body>
-    <table mdbTable mdbTableScroll scrollY="true" maxHeight="200" bordered="true">
+    <table mdbTable mdbTableScroll scrollY="true" maxHeight="300" bordered="true">
       <thead>
         <tr>
           <th *ngFor="let head of headElements; let i = index" scope="col">{{head}}</th>

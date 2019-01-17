@@ -49,7 +49,7 @@ const appRoutes: Routes = [
     { path: 'management/type/add-type', component: AddTypeComponent, canActivate: [RoleGuard] },
     { path: 'management/type/edit-type/:id/:typ', component: EditTypeComponent, canActivate: [RoleGuard] },
     { path: 'management/offer/add-offer', component: AddOfferComponent, canActivate: [RoleGuard] },
-    { path: 'management/offer/edit-offer/:idOferty/:nazwa/:opisOferty/:idKategorii/:opis', component: EditOfferComponent, canActivate: [RoleGuard] },
+    { path: 'management/offer/edit-offer/:idOferty/:nazwa/:opisOferty/:idKategorii/:opis/:email/:pensja/:adresFirmy', component: EditOfferComponent, canActivate: [RoleGuard] },
     { path: 'management/category/add-category', component: AddCategoryComponent, canActivate: [RoleGuard] },
     { path: 'management/category/edit-category/:idKategorii/:opis/:nazwa', component: EditCategoryComponent, canActivate: [RoleGuard] },
 

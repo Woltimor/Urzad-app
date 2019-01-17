@@ -19,9 +19,15 @@ export class AddOfferComponent implements OnInit {
   categories:TypeCategoryModel;
   OpisOferty:string='';
   IdKategorii:number=0;
+  pensja:number=null;
+  adresFirmy:string='';
+  email:string='';
   initializeAtributes(){
     this.offers.OpisOferty = this.OpisOferty;
     this.offers.IdKategorii = this.IdKategorii;
+    this.offers.adresFirmy = this.adresFirmy;
+    this.offers.email = this.email;
+    this.offers.pensja = this.pensja;
   }
   ngOnInit() {
     this.managementService.getTypeCategory().subscribe(l => this.categories = l);

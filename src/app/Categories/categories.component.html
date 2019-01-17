@@ -30,7 +30,7 @@
     <a class="float-right" *ngIf="toggleAchievements">
       <p *ngFor="let get of getAchievements">{{get.opis}}</p>
     </a>
-    <table mdbTable mdbTableScroll scrollY="true" maxHeight="200" bordered="true">
+    <table mdbTable mdbTableScroll scrollY="true" maxHeight="300" bordered="true">
       <thead>
         <tr>
           <th *ngFor="let head of headElements; let i = index" scope="col">{{head}}</th>
@@ -43,6 +43,9 @@
           <td>{{el.opisTypu}}</td>
           <td>{{el.nazwa}}</td>
           <td>{{el.opisOferty}}</td>
+          <td>{{el.adresFirmy}}</td>
+          <td>{{el.email}}</td>
+          <td>{{el.pensja}}</td>
           <td><button type="button" mdbBtn color="green" rounded="true" size="sm" class="my-0" (click)="addOffer(el.idKategorii)"
               [routerLink]="['/home']">Dodaj</button></td>
           <td><a class="new" (click)="showAchievements(el.idOferty)">Pokaż wymagane osiągnięcia</a>

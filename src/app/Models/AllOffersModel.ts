@@ -5,6 +5,10 @@ export class AllOffersModel{
     opisTypu:string = '';
     nazwa:string='';
     opisOferty:string='';
+    pensja:number=0;
+    adresFirmy:string='';
+    email:string='';
+
 }
 
 
